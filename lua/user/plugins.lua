@@ -95,10 +95,6 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
-  -- coc
-  use {'neoclide/coc.nvim', branch = 'release'}
-
-
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
 --   if PACKER_BOOTSTRAP then
