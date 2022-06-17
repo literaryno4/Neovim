@@ -16,7 +16,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
--- vim.cmd [[
+-- vim.cmd [[jsfaint/gen_tags.vim
 --   augroup packer_user_config
 --     autocmd!
 --     autocmd BufWritePost plugins.lua source <afile> | PackerSync
@@ -94,6 +94,14 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  -- ClangFormat
+  use "rhysd/vim-clang-format"
+
+  -- gen tags
+  use "jsfaint/gen_tags.vim"
+
+  use "weilbith/nvim-lsp-smag"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

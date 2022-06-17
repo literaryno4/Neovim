@@ -5,7 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "ccls", "sumneko_lua" }
+local servers = { "sumneko_lua" }
 
 lsp_installer.setup {
 	ensure_installed = servers
@@ -23,17 +23,17 @@ for _, server in pairs(servers) do
 	lspconfig[server].setup(opts)
 end
 
-lspconfig.ccls.setup {
-  init_options = {
-        compilationDatabaseDirectory = "build";
-    index = {
-      threads = 0;
-    };
-    clang = {
-      excludeArgs = { "-frounding-math"} ;
-    };
-  }
-}
+-- lspconfig.ccls.setup {
+--   init_options = {
+--         compilationDatabaseDirectory = "build";
+--     index = {
+--       threads = 0;
+--     };
+--     clang = {
+--       excludeArgs = { "-frounding-math"} ;
+--     };
+--   }
+-- }
 
 require'lspconfig'.clangd.setup{}
 
