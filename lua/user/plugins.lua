@@ -82,15 +82,6 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
-  -- markdown
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
-
-  use 'mzlogin/vim-markdown-toc'
-  use 'plasticboy/vim-markdown'
-
   -- Telescope
   use "nvim-telescope/telescope.nvim"
 
