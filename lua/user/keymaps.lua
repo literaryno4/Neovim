@@ -67,3 +67,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
+vim.keymap.set(
+      "",
+      "<Leader>l",
+      require("lsp_lines").toggle,
+      { desc = "Toggle lsp_lines" }
+)

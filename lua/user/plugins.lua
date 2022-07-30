@@ -104,6 +104,13 @@ return packer.startup(function(use)
   use "weilbith/nvim-lsp-smag"
   use 'preservim/nerdtree'
 
+  use({
+        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+        config = function()
+          require("lsp_lines").setup()
+        end,
+  })
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
