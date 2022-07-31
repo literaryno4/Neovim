@@ -62,7 +62,8 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
-  use 'shaunsingh/solarized.nvim'
+  -- use 'shaunsingh/solarized.nvim'
+  use "ishan9299/nvim-solarized-lua"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -112,6 +113,13 @@ return packer.startup(function(use)
 
   use "weilbith/nvim-lsp-smag"
   use 'preservim/nerdtree'
+
+  use({
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      config = function()
+        require("lsp_lines").setup()
+      end,
+  })
 
 
   -- Automatically set up your configuration after cloning packer.nvim
