@@ -60,6 +60,12 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
+-- NERDTree
+keymap("n", "<leader>n", ":NERDTreeFocus<CR>", opts)
+keymap("n", "<C-n>", ":NERDTree<CR>", opts)
+keymap("n", "<C-t>", ":NERDTreeToggle<CR>", opts)
+keymap("n", "<C-f>", ":NERDTreeFind<CR>", opts)
+
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
@@ -67,9 +73,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-vim.keymap.set(
-      "",
-      "<Leader>l",
-      require("lsp_lines").toggle,
-      { desc = "Toggle lsp_lines" }
-)
+-- vim.keymap.set(
+--       "",
+--       "<Leader>l",
+--       require("lsp_lines").toggle,
+--       { desc = "Toggle lsp_lines" }
+-- )

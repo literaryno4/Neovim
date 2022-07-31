@@ -114,6 +114,7 @@ return packer.startup(function(use)
   use "weilbith/nvim-lsp-smag"
   use 'preservim/nerdtree'
 
+  use 'whoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   use({
       "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
       config = function()
