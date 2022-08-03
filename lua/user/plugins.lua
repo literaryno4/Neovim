@@ -90,7 +90,7 @@ return packer.startup(function(use)
   })
 
   use 'mzlogin/vim-markdown-toc'
-  use 'plasticboy/vim-markdown'
+  -- use 'plasticboy/vim-markdown'
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
