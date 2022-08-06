@@ -109,7 +109,7 @@ return packer.startup(function(use)
   use "rhysd/vim-clang-format"
 
   -- gen tags
-  use "jsfaint/gen_tags.vim"
+  -- use "jsfaint/gen_tags.vim"
 
   use "weilbith/nvim-lsp-smag"
   use 'preservim/nerdtree'

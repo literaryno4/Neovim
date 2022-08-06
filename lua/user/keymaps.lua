@@ -73,9 +73,9 @@ keymap("n", "<C-t>", ":NERDTreeToggle<CR>", opts)
 -- keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 -- keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
--- vim.keymap.set(
---       "",
---       "<Leader>l",
---       require("lsp_lines").toggle,
---       { desc = "Toggle lsp_lines" }
--- )
+vim.keymap.set(
+      "",
+      "<Leader>l",
+      require("lsp_lines").toggle,
+      { desc = "Toggle lsp_lines" }
+)
