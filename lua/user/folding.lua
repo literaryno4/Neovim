@@ -1,25 +1,38 @@
 local vim = vim
 local opt = vim.opt
--- local api = vim.api
--- local M = {}
 
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldlevel = 99
 
--- function M.nvim_create_augroups(definitions)
---     for group_name, definition in pairs(definitions) do
---         api.nvim_command('augroup '..group_name)
---         api.nvim_command('autocmd!')
---         for _, def in ipairs(definition) do
---             local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
---             api.nvim_command(command)
---         end
---         api.nvim_command('augroup END')
---     end
--- end
--- local autoCommands = {
---   open_folds = {
---     {"BufReadPost,FileReadPost", "*", "normal zR"}
---   }
--- }
--- M.nvim_create_augroups(autoCommands)
+local config = {
+  keep_indentation = true,
+  fill_char = '.',
+  sections = {
+    left = {
+      'content',
+    },
+    right = {
+      ' ', 'number_of_folded_lines', ': ', 'percentage', ' ',
+      function(config) return config.fill_char:rep(3) end
+    }
+  },
+  remove_fold_markers = true,
+  process_comment_signs = 'spaces',
+  stop_words = {
+    '@brief%s*', -- (for C++) Remove '@brief' and all spaces after.
+  },
+  add_close_pattern = true, -- true, 'last_line' or false
+
+  matchup_patterns = {
+    {  '{', '}' },
+    { '%(', ')' }, -- % to escape lua pattern char
+    { '%[', ']' }, -- % to escape lua pattern char
+  },
+
+  ft_ignore = { 'neorg' },
+}
+
+require("pretty-fold").setup{
+  config
+}
