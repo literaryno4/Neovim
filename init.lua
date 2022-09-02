@@ -1,7 +1,7 @@
-require "user.colorscheme"
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
+require "user.colorscheme"
 require "user.cmp"
 require "user.lsp"
 require "user.telescope"
@@ -21,3 +21,4 @@ require "user.toggleterm"
 -- require "user.whichkey"
 -- require "user.autocommands"
 
+require('user.im-select').setup()
