@@ -1,7 +1,5 @@
 local opts = { noremap = true, silent = true }
 
-local term_opts = { silent = true }
-
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
@@ -19,6 +17,9 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+-- telescop live_grep
+keymap("n", "<S-f>", ":Telescope live_grep<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
