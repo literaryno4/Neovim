@@ -5,7 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "sumneko_lua" }
+local servers = { "sumneko_lua", "clangd", "rust_analyzer" }
 
 lsp_installer.setup {
 	ensure_installed = servers
@@ -17,9 +17,9 @@ for _, server in pairs(servers) do
 		capabilities = require("user.lsp.handlers").capabilities,
 	}
 	local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
-	--if has_custom_opts then
+	if has_custom_opts then
 	 	opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
-	--end
+	end
 	lspconfig[server].setup(opts)
 end
 
@@ -35,5 +35,5 @@ end
 --   }
 -- }
 
-require'lspconfig'.clangd.setup{}
+-- require'lspconfig'.clangd.setup{}
 

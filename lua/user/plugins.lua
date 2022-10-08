@@ -46,8 +46,8 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
+  -- use "kyazdani42/nvim-web-devicons"
+  -- use "kyazdani42/nvim-tree.lua"
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use "nvim-lualine/lualine.nvim"
@@ -62,7 +62,8 @@ return packer.startup(function(use)
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
-  use 'shaunsingh/solarized.nvim'
+  -- use 'shaunsingh/solarized.nvim'
+  use "ishan9299/nvim-solarized-lua"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -81,6 +82,7 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+  use "nvim-lua/lsp_extensions.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -99,18 +101,23 @@ return packer.startup(function(use)
   use "rhysd/vim-clang-format"
 
   -- gen tags
-  use "jsfaint/gen_tags.vim"
+  -- use "jsfaint/gen_tags.vim"
 
   use "weilbith/nvim-lsp-smag"
   use 'preservim/nerdtree'
 
+  use 'whoIsSethDaniel/toggle-lsp-diagnostics.nvim'
   use({
-        "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-        config = function()
-          require("lsp_lines").setup()
-        end,
+      "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+      config = function()
+        require("lsp_lines").setup()
+      end,
   })
 
+  -- customize foldtext
+  use{ 'anuvyklack/pretty-fold.nvim'}
+
+  use 'keaising/im-select.nvim'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
